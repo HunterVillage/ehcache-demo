@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd">
+    <cacheManagerPeerProviderFactory
+            class="net.sf.ehcache.distribution.RMICacheManagerPeerProviderFactory"
+            properties="peerDiscovery=manual"/>
+
+    <!-- 磁盘缓存位置 -->
+    <diskStore path="ehcache"/>
+
+    <!-- 缓存配置 -->
+    <cache name="collectorCommonCache"
+           maxElementsInMemory="10000"
+           maxElementsOnDisk="0"
+           memoryStoreEvictionPolicy="LRU"
+           overflowToDisk="true"
+           diskPersistent="false"
+           diskSpoolBufferSizeMB="100"
+           eternal="true"
+           copyOnRead="true"
+           copyOnWrite="true">
+        <cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory" />
+        <bootstrapCacheLoaderFactory class="net.sf.ehcache.store.DiskStoreBootstrapCacheLoaderFactory"
+                                     properties="bootstrapAsynchronously=true"/>
+    </cache>
+
+</ehcache>
