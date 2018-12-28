@@ -7,7 +7,7 @@ EhCache Demo
 
 ## EhCache demo
 
-EhCache 是一个纯Java的进程内缓存框架，速度非常快，使用也很简单。笨项目使用以spring boot为基础来展示ehcache的使用方法
+EhCache 是一个纯Java的进程内缓存框架，速度非常快，使用也很简单。本项目使用以spring boot为基础来展示ehcache的使用方法
 ## :zap:内容索引
 
 ### :wrench:开发工具
