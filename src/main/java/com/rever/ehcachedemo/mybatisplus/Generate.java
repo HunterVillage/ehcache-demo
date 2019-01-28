@@ -11,7 +11,7 @@ import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 
 /**
  * @Description: mybatis plus代码生成; 注意: 使用该工具时，请将代码写在测试中，并且使用注解 @ignore 忽视掉测试。
- * @Author: zhangzhuo
+ * @Author: gaoyakang
  * @Version: 1.0
  * @Create Date Time: 2018-07-24 14:03
  * @Update Date Time:
