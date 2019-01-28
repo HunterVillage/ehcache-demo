@@ -2,7 +2,7 @@ package com.rever.ehcachedemo.cacheImpl;
 
 /**
  * @Description: 缓存常量
- * @Author: zhangzhuo
+ * @Author: gaoyakang
  * @Version: 1.0
  * @Create Date Time: 2018-08-13 16:01
  * @Update Date Time:

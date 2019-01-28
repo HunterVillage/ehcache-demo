@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * @Description: ehcache 工厂
- * @Author: zhangzhuo
+ * @Author: gaoyakang
  * @Version: 1.0
  * @Create Date Time: 2018-08-29 10:33
  * @Update Date Time:
