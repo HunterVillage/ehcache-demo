@@ -38,7 +38,7 @@ public class MybatisPlusConfig {
     /**
      * mapper.xml的匹配位置
      */
-    private final String MAPPER_LOCATIONS = "classpath:/com/rever/ehcachedemo//mapper/xml/*Mapper.xml";
+    private final String MAPPER_LOCATIONS = "classpath:/com/rever/ehcachedemo/mapper/xml/*Mapper.xml";
 
     /**
      * mapper包
@@ -71,7 +71,7 @@ public class MybatisPlusConfig {
 
     /**
      * mapper包扫描器相当于顶部的：
-     * {@code @MapperScan("com.sino.business.server.mapper*")}
+     * {@code @MapperScan("com.rever.ehcachedemo.mapper*")}
      * 这里可以扩展，比如使用配置文件来配置扫描Mapper的路径
      */
     @Bean
