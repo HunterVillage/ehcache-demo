@@ -1,13 +1,13 @@
 # 开发环境配置文件
 server:
-  port: 8020
+  port: 8060
 
 spring:
   application:
-    name: business-center
+    name: ehcache-demo
   datasource:
-    url: jdbc:mysql://localhost:3306/aiops?useUnicode=true&useSSL=false&characterEncoding=utf8
-    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cachetest?useUnicode=true&useSSL=false&characterEncoding=utf8
+    driverClassName: com.mysql.cj.jdbc.Driver
     username: root
     password:
 
