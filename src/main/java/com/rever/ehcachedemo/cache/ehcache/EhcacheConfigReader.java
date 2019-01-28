@@ -8,7 +8,7 @@ import java.util.Objects;
 
 /**
  * @Description: ehcache 配置读取工具类
- * @Author: zhangzhuo
+ * @Author: gaoyakang
  * @Version: 1.0
  * @Create Date Time: 2018-11-13 16:47
  * @Update Date Time:
