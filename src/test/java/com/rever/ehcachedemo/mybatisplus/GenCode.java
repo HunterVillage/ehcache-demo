@@ -19,7 +19,7 @@ public class GenCode {
 
     @Test
     public void gen() throws Exception {
-        generate.generateAll("com.sino.ehcachedemo.server");
+        generate.generateAll("com.rever.ehcachedemo");
     }
 
     @Test
