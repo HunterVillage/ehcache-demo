@@ -27,7 +27,7 @@ public class User implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private String name;
-    @TableId(value = "id", type = IdType.UUID)
+    @TableId(value = "id", type = IdType.INPUT)
     private Integer id;
     private String desc;
     private Date time;
