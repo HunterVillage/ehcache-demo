@@ -6,9 +6,9 @@ import java.util.Map;
 
 /**
  * @Description: 缓存工具类
- * @Author: zhangzhuo
+ * @Author: gaoyakang
  * @Version: 1.0
- * @Create Date Time: 2018-08-31 14:16
+ * @Create Date Time: 2019-01-31 14:16
  * @Update Date Time:
  * @see
  */
