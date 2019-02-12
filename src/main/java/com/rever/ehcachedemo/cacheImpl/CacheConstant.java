@@ -16,6 +16,6 @@ public class CacheConstant {
     /**
      * 公用缓存
      */
-    public static final String EHCACHE_COMMON_NAME = "collectorCommonCache";
+    public static final String EHCACHE_COMMON_NAME = "commonCache";
 
 }
