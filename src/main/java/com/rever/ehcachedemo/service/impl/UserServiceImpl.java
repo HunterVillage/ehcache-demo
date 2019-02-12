@@ -42,6 +42,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         Set<String> userKeys=userCache.getKeys();
         List<User> userList=userCache.get(userKeys);
         if(userList!=null&&userList.size()>0){
+            log.info("Finding all users in cache successfully");
             return userList;
         }else {
             Wrapper<User> wrapper = new EntityWrapper<>();
