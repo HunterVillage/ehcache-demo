@@ -27,7 +27,7 @@ EhCache 是一个纯Java的进程内缓存框架，速度非常快，使用也�
 - lombok
 
 ### 数据库配置
-1.运行项目中的cachetest.sql来初始化一个cachetest数据库，
-2.在application-dev.yml中修改为你连接的用户名和密码
-3.运行`EhcacheDemoApplication`
+1. 运行项目中的cachetest.sql来初始化一个cachetest数据库
+2. 在application-dev.yml中修改为你连接的用户名和密码
+3. 运行`EhcacheDemoApplication`
 
