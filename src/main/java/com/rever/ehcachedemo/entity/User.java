@@ -1,6 +1,5 @@
 package com.rever.ehcachedemo.entity;
 
-import java.util.Date;
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.enums.IdType;
 import java.io.Serializable;
@@ -17,7 +16,7 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author gaoyakang
- * @since 2019-01-28
+ * @since 2019-02-12
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -27,10 +26,11 @@ public class User implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private String name;
-    @TableId(value = "id", type = IdType.INPUT)
-    private Integer id;
+    @TableId(value = "id", type = IdType.UUID)
+    private String id;
     private String desc;
-    private Date time;
+    private String create_time;
+    private String update_time;
     private String password;
 
 
