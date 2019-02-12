@@ -12,7 +12,7 @@ import java.util.Set;
 
 /**
  * @Description: ConcurrentMap cache实现类型
- * @Author: zhangzhuo
+ * @Author: gaoyakang
  * @Version: 1.0
  * @Create Date Time: 2018-08-17 11:23
  * @Update Date Time:
@@ -35,9 +35,7 @@ public class ConcurrentMapCache<T> implements ICache<T> {
     @Override
     public List<T> get(Set<String> keys) {
         List<T> list = Lists.newArrayList();
-        keys.forEach(key->{
-            list.add(cacheMap.get(key));
-        });
+        keys.forEach(key-> list.add(cacheMap.get(key)));
         return list;
     }
 
@@ -69,9 +67,7 @@ public class ConcurrentMapCache<T> implements ICache<T> {
 
     @Override
     public Boolean putIfAbsent(Map<String, T> map) {
-        map.forEach((k, v)->{
-            this.putIfAbsent(k, v);
-        });
+        map.forEach(this::putIfAbsent);
         return true;
     }
 
@@ -83,9 +79,7 @@ public class ConcurrentMapCache<T> implements ICache<T> {
 
     @Override
     public Boolean remove(Set<String> keys) {
-        keys.forEach(key->{
-            cacheMap.remove(key);
-        });
+        keys.forEach(key-> cacheMap.remove(key));
         return true;
     }
 
