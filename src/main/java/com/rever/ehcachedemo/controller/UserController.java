@@ -6,6 +6,7 @@ import com.rever.ehcachedemo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -33,9 +34,16 @@ public class UserController {
         return userService.findUserList();
     }
 
+    @GetMapping("/cache")
+    public List<User> getUserListInCache() {
+        return userService.findUserListInCache();
+    }
+
     @PostMapping
     public User createUser(@RequestBody User user){
-        user.setTime(new Date());
+        String now=LocalDate.now().toString();
+        user.setCreate_time(now);
+        user.setUpdate_time(now);
         boolean result=this.userService.insert(user);
         return result?user:null;
     }
