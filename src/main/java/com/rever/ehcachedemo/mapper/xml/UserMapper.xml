@@ -7,13 +7,14 @@
         <id column="id" property="id" />
         <result column="name" property="name" />
         <result column="desc" property="desc" />
-        <result column="time" property="time" />
+        <result column="create_time" property="create_time" />
+        <result column="update_time" property="update_time" />
         <result column="password" property="password" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        name, id, desc, time, password
+        name, id, desc, create_time, update_time, password
     </sql>
 
 </mapper>
