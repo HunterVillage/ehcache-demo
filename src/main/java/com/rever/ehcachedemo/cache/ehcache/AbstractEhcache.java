@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 
 /**
  * @Description: Ehcache 抽象缓存实现类, 子类继承它使用
- * @Author: zhangzhuo
+ * @Author: gaoyakang
  * @Version: 1.0
  * @Create Date Time: 2018-08-13 14:27
  * @Update Date Time:
@@ -46,13 +46,13 @@ public abstract class AbstractEhcache<T> implements ICache<T> {
      * 缓存名称，配置文件中设置的缓存名称
      * @return
      */
-    protected abstract String cacheName();
+    abstract String cacheName();
 
     /**
      * key 前缀, 主要解决id重复。如果为null或者是空串, 则使用原始key
      * @return
      */
-    protected abstract String keyPrefix();
+    abstract String keyPrefix();
 
 
     @Override
@@ -79,7 +79,7 @@ public abstract class AbstractEhcache<T> implements ICache<T> {
             return Lists.newArrayList();
         }
         return keys.stream()
-                .map(key -> this.get(key))
+                .map(this::get)
                 .collect(Collectors.toList());
     }
 
@@ -91,7 +91,7 @@ public abstract class AbstractEhcache<T> implements ICache<T> {
         }
         return keys.stream()
                 .filter(key -> key != null && Objects.equals(getKeyPrefixByJoiningKey(key), keyPrefix))
-                .map(key -> this.getOriginalKey(key))
+                .map(this::getOriginalKey)
                 .collect(Collectors.toSet());
     }
 
@@ -109,9 +109,7 @@ public abstract class AbstractEhcache<T> implements ICache<T> {
         if(map == null){
             return false;
         }
-        map.forEach((k,v)->{
-            this.put(k ,v );
-        });
+        map.forEach(this::put);
         return true;
     }
 
@@ -126,9 +124,7 @@ public abstract class AbstractEhcache<T> implements ICache<T> {
         if(map == null){
             return false;
         }
-        map.forEach((k,v)->{
-            this.putIfAbsent(k ,v );
-        });
+        map.forEach(this::putIfAbsent);
         return true;
     }
 
@@ -140,10 +136,8 @@ public abstract class AbstractEhcache<T> implements ICache<T> {
     @Override
     public Boolean remove(Set<String> keys) {
         keys.stream()
-                .map(key -> joiningKey(key))
-                .forEach(key -> {
-                    remove(key);
-                });
+                .map(this::joiningKey)
+                .forEach(this::remove);
         return true;
     }
 
