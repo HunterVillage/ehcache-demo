@@ -15,7 +15,7 @@ import org.junit.Test;
 @Ignore
 public class GenCode {
 
-    private Generate generate = new Generate("jdbc:mysql://localhost:3306/cacheTest", "root", "", "gaoyakang", "D://codeGen");
+    private Generate generate = new Generate("jdbc:mysql://localhost:3306/cacheTest?serverTimezone=UTC", "root", "", "gaoyakang", "D://codeGen");
 
     @Test
     public void gen() throws Exception {
