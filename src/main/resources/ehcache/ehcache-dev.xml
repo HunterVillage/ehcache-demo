@@ -9,7 +9,7 @@
     <diskStore path="ehcache"/>
 
     <!-- 缓存配置 -->
-    <cache name="collectorCommonCache"
+    <cache name="commonCache"
            maxElementsInMemory="10000"
            maxElementsOnDisk="0"
            memoryStoreEvictionPolicy="LRU"
