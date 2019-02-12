@@ -5,6 +5,7 @@ import com.rever.ehcachedemo.commoncache.ICache;
 import com.rever.ehcachedemo.entity.User;
 import com.rever.ehcachedemo.exception.InitializeException;
 import com.rever.ehcachedemo.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -21,6 +22,7 @@ import java.util.List;
  * @see
  */
 @Component
+@Slf4j
 public class UserCacheInitialize {
     private ICache<User> userCache;
     private UserService userService;
@@ -33,5 +35,6 @@ public class UserCacheInitialize {
     public void initialize() throws InitializeException {
       List<User> userList=userService.findUserList();
       userList.forEach(user -> userCache.put(String.valueOf(user.getId()),user));
+      log.info("User cache has been initialized! cache size:{}",userList.size());
     }
 }
